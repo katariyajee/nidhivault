@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+}
+
+header {
+  background: #6c5ce7;
+  color: white;
+  padding: 15px;
+}
+
+nav {
+  background: white;
+  padding: 10px;
+}
+
+nav button {
+  margin-right: 10px;
+}
+
+.tab {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+form input, form select {
+  margin: 5px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
