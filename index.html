@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NidhiVault Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>💳 NidhiVault Pro</h1>
+</header>
+
+<nav>
+  <button onclick="UI.showTab('dashboard')">Dashboard</button>
+  <button onclick="UI.showTab('transactions')">Transactions</button>
+  <button onclick="UI.showTab('accounts')">Accounts</button>
+  <button onclick="UI.showTab('categories')">Categories</button>
+</nav>
+
+<main>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="tab">
+    <h2>Dashboard</h2>
+    <div id="summary"></div>
+  </section>
+
+  <!-- TRANSACTIONS -->
+  <section id="transactions" class="tab hidden">
+    <h2>Add Transaction</h2>
+
+    <form id="txnForm">
+      <select id="txnType" required>
+        <option value="">Type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+        <option value="transfer">Transfer</option>
+      </select>
+
+      <input type="date" id="txnDate" required>
+      <input type="text" id="txnDesc" placeholder="Description" required>
+      <input type="number" id="txnAmount" placeholder="Amount" required>
+
+      <select id="txnAccount"></select>
+      <select id="txnCategory"></select>
+      <select id="txnSubcategory"></select>
+
+      <button type="submit">Save</button>
+    </form>
+
+    <h3>Transactions</h3>
+    <div id="txnList"></div>
+  </section>
+
+  <!-- ACCOUNTS -->
+  <section id="accounts" class="tab hidden">
+    <h2>Accounts</h2>
+
+    <form id="accountForm">
+      <input type="text" id="accName" placeholder="Account Name" required>
+      <select id="accType">
+        <option value="bank">Bank</option>
+        <option value="cash">Cash</option>
+      </select>
+      <input type="number" id="accBalance" placeholder="Opening Balance">
+      <button type="submit">Add</button>
+    </form>
+
+    <div id="accountList"></div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="tab hidden">
+    <h2>Categories</h2>
+
+    <form id="categoryForm">
+      <input type="text" id="catName" placeholder="Category Name" required>
+      <button>Add Category</button>
+    </form>
+
+    <form id="subCategoryForm">
+      <select id="parentCategory"></select>
+      <input type="text" id="subCatName" placeholder="Subcategory Name" required>
+      <button>Add Subcategory</button>
+    </form>
+
+    <div id="categoryList"></div>
+  </section>
+
+</main>
+
+<script src="js/db.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
